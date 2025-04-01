@@ -13,10 +13,14 @@ const AddModal = ({ title, show, setShow, onSubmit }: AddModalProps) => {
     const handleSubmit = () => {
         if (myTitle.length > 4) {
             const found = onSubmit(myTitle)
-            if (!found)
+            if (!found) {
                 setShow()
-            else
+            } else {
+                console.log(
+                    "test"
+                )
                 setErr("This Title is Used Before!")
+            }
         } else {
             setErr("Title is too Short!")
         }

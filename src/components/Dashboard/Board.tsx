@@ -22,7 +22,7 @@ const Board = ({ column }: BoardProps) => {
     }
     const submitNewTask = (title: string) => {
         addNewTask(title, column.type)
-        return true
+        return false
     }
     return (
         <div className="board p-2 rounded d-flex flex-column" ref={setNodeRef}>

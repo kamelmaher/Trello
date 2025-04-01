@@ -7,8 +7,11 @@ const Sidebar = () => {
     const { boards, activeBoard, changeBoard, addNewBoard } = useAppContext()
     const [showModal, setShowModal] = useState(false)
     const onSubmit = (title: string) => {
-        addNewBoard(title)
-        return true
+        let found = false
+        boards.map(board => board.title == title ? found = true : board)
+        if (!found)
+            addNewBoard(title)
+        return found
     }
     return (
         <aside>
