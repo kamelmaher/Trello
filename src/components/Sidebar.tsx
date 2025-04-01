@@ -8,6 +8,7 @@ const Sidebar = () => {
     const [showModal, setShowModal] = useState(false)
     const onSubmit = (title: string) => {
         addNewBoard(title)
+        return true
     }
     return (
         <aside>
