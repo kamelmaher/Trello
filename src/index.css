@@ -1,0 +1,27 @@
+@import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --primary: #5754bd;
+  --light: #dfe7f7;
+  --background: #f3f4fd;
+}
+
+* {
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter",
+    sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+.pointer {
+  cursor: pointer;
+}

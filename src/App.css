@@ -1,0 +1,143 @@
+aside {
+    width: 250px;
+    border: 1px solid var(--light);
+    height: 100vh;
+}
+
+aside li {
+    color: var(--primary);
+    margin-bottom: 8px !important;
+    padding: 7px !important;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+header {
+    position: relative;
+}
+
+header .menu {
+    position: absolute;
+    width: 180px;
+    right: 0;
+    bottom: 0;
+    transform: translateY(80%);
+    background: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.active-board {
+    background-color: var(--primary);
+    color: white;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.dashboard {
+    background-color: var(--background);
+    flex: 1;
+}
+
+.dashboard header {
+    border-bottom: 1px solid var(--light);
+}
+
+.board {
+    background-color: var(--light);
+    width: 300px;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+
+.board .title {
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+}
+
+.board .title .board-delete {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    padding: 5px !important;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid var(--light);
+    color: red;
+    cursor: pointer;
+    transform: translateX(100%);
+    transition: .3s;
+}
+
+.board .footer {
+    border-top: 1px solid var(--background);
+    font-size: 14px;
+}
+
+.task {
+    position: relative;
+    overflow: hidden;
+}
+
+.task-delete {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 5px !important;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid var(--light);
+    color: red;
+    cursor: pointer;
+    transform: translateX(-100%);
+    transition: .3s;
+}
+
+.task:hover .task-delete {
+    transform: translateX(0);
+}
+
+.board .title:hover .board-delete {
+    transform: translateX(0);
+}
+
+.modal-dialog {
+    margin: auto !important;
+}
+
+.modal-content {
+    padding: 5px !important;
+}
+
+.modal-header {
+    padding: .3rem .3rem !important;
+    justify-content: space-between;
+}
+
+.modal-body {
+    padding: .5rem !important;
+}
+
+.modal-footer {
+    padding: 5px !important;
+    gap: 10px;
+    flex-direction: column;
+    margin-top: 15px !important;
+}
+
+.modal-footer button {
+    padding: 0.5rem 0.75rem !important;
+    width: 100%;
+}
+
+.form-control {
+    padding: 5px 10px !important;
+}
