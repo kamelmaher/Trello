@@ -1,7 +1,7 @@
 import { FaPlus, FaTrello } from "react-icons/fa";
 import { IoCloseSharp } from "react-icons/io5";
 import { useAppContext } from "../Context/useAppContext";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import AddModal from "./Modals/AddModal";
 type SideBarProps = {
     showSideBar: boolean,
@@ -17,8 +17,17 @@ const Sidebar = ({ showSideBar, handleSideBar }: SideBarProps) => {
             addNewBoard(title)
         return found
     }
+    const sidebarRef = useRef<HTMLElement | null>(null)
+    const handelClickOutside = (e: MouseEvent) => {
+        if (sidebarRef.current && !sidebarRef.current.contains(e.target as Node))
+            handleSideBar(false)
+    }
+    useEffect(() => {
+        window.addEventListener("mousedown", handelClickOutside)
+        return () => window.removeEventListener("mousedown", handelClickOutside)
+    }, [])
     return (
-        <aside className={`${showSideBar && "show-menu"}`}>
+        <aside className={`${showSideBar && "show-menu"}`} ref={sidebarRef}>
             <div className="p-3">
                 <div
                     className="d-flex justify-content-between align-items-center mb-3"

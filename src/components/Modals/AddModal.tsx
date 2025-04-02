@@ -15,10 +15,8 @@ const AddModal = ({ title, show, setShow, onSubmit }: AddModalProps) => {
             const found = onSubmit(myTitle)
             if (!found) {
                 setShow()
+                setTitle("")
             } else {
-                console.log(
-                    "test"
-                )
                 setErr("This Title is Used Before!")
             }
         } else {
