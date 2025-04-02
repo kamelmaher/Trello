@@ -1,10 +1,13 @@
 import BoardsContainer from "./BoardsContainer"
 import Header from "./Header"
-
-const Dashboard = () => {
+type DashboardProps = {
+    showSideBar: boolean,
+    handleSideBar: (e: boolean) => void
+}
+const Dashboard = ({ showSideBar, handleSideBar }: DashboardProps) => {
     return (
         <div className="dashboard">
-            <Header />
+            <Header showSideBar={showSideBar} handleSideBar={handleSideBar} />
             <BoardsContainer />
         </div>
     )

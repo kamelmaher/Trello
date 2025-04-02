@@ -1,9 +1,13 @@
 import { FaPlus, FaTrello } from "react-icons/fa";
+import { IoCloseSharp } from "react-icons/io5";
 import { useAppContext } from "../Context/useAppContext";
 import { useState } from "react";
 import AddModal from "./Modals/AddModal";
-
-const Sidebar = () => {
+type SideBarProps = {
+    showSideBar: boolean,
+    handleSideBar: (e: boolean) => void
+}
+const Sidebar = ({ showSideBar, handleSideBar }: SideBarProps) => {
     const { boards, activeBoard, changeBoard, addNewBoard } = useAppContext()
     const [showModal, setShowModal] = useState(false)
     const onSubmit = (title: string) => {
@@ -14,9 +18,16 @@ const Sidebar = () => {
         return found
     }
     return (
-        <aside>
+        <aside className={`${showSideBar && "show-menu"}`}>
             <div className="p-3">
-                <h3 className="fw-bold fs-1 mb-3">Trello</h3>
+                <div
+                    className="d-flex justify-content-between align-items-center mb-3"
+                >
+                    <h3 className="fw-bold fs-1">Trello</h3>
+                    <div onClick={() => handleSideBar(false)} style={{ fontSize: "35px" }} className={`pointer close-menu`} >
+                        <IoCloseSharp />
+                    </div>
+                </div>
                 <div>
                     <p className="mb-2">All Boards</p>
                     <ul>

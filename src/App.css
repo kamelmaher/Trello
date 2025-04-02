@@ -2,6 +2,7 @@ aside {
     width: 250px;
     border: 1px solid var(--light);
     height: 100vh;
+    transition: .3s;
 }
 
 aside li {
@@ -11,6 +12,39 @@ aside li {
     display: flex;
     align-items: center;
     gap: 3px;
+}
+
+.menu-button {
+    display: none;
+}
+
+.close-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    aside {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        background: white;
+        z-index: 125;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transform: translateX(-100%);
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .show-menu {
+        transform: translateX(0) !important;
+    }
+
+    .close-menu {
+        display: block;
+    }
 }
 
 header {
@@ -37,6 +71,7 @@ header .menu {
 .dashboard {
     background-color: var(--background);
     flex: 1;
+    height: 100vh;
 }
 
 .dashboard header {
@@ -140,4 +175,10 @@ header .menu {
 
 .form-control {
     padding: 5px 10px !important;
+}
+
+@media (max-width: 768px) {
+    .modal-dialog {
+        width: 300px !important;
+    }
 }
